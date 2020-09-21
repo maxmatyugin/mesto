@@ -1,0 +1,26 @@
+@import url(./__container/popup__container.css);
+
+
+.popup {
+   position: absolute;
+   height: 100vh;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0; 
+  background-color: #000000;
+  opacity: .5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup::after {
+  background-color: #000000;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0; 
+  border: orange 3px solid;
+}
