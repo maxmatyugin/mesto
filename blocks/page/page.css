@@ -5,6 +5,8 @@
   margin: 0 auto;
   box-sizing: border-box;
   position: relative;
+  display: flex;
+  flex-direction: column;
   background-color: #000000;
   padding-left: 199px;
   padding-right: 199px;
