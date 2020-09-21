@@ -1,6 +1,6 @@
 # Проект 4: Место
 ## Доступен по ссылке
-https://maxmatyugin.github.io/russian-travel/
+https://maxmatyugin.github.io/mesto/
 ### Обзор
 
 * Figma
