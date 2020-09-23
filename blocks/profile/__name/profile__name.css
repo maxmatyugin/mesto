@@ -7,10 +7,9 @@
   margin-bottom: 16px;
 }
 
-@media screen and (max-width: 1055px) {
+@media screen and (max-width: 768px) {
   .profile__name{
     margin-bottom: 14px;
     font-size: 27px;
   }
-  
 }

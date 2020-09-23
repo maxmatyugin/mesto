@@ -22,3 +22,11 @@
   }
   
 }
+
+@media screen and (max-width: 1055px) {
+  .profile{
+    margin-left: 19px;
+  margin-right: 19px;
+  }
+  
+}

@@ -5,3 +5,19 @@
   margin-left: 199px;
   margin-right: 199px;
 }
+
+@media screen and (max-width: 1055px) {
+  .footer {
+    margin-left: 50px;
+  margin-right: 50px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .footer {
+    margin-left: 19px;
+  margin-right: 19px;
+  }
+  
+}
+
