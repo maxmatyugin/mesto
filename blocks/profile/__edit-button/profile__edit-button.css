@@ -2,7 +2,6 @@
   width: 24px;
   height: 24px;
   margin: 0;
-  
   box-sizing: border-box;
   border: 1px solid #ffffff;
   background-image: url(../../../images/edit.svg);
@@ -19,11 +18,10 @@
 }
 
 @media screen and (max-width: 1055px) {
-  .profile__edit-button{
+  .profile__edit-button {
     margin-left: 1px;
     width: 16px;
     height: 16px;
     background-size: 7.5px 7.5px;
   }
-  
 }

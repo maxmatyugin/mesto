@@ -6,8 +6,6 @@
 @import url(./__edit-button/profile__edit-button.css);
 @import url(./__add-button/profile__add-button.css);
 @import url(./__wrapper/profile__wrapper.css);
-
-
 .profile {
   display: flex;
   justify-content: space-between;
@@ -18,16 +16,14 @@
 }
 
 @media screen and (max-width: 1055px) {
-  .profile{
+  .profile {
     flex-direction: column;
   }
-  
 }
 
 @media screen and (max-width: 1055px) {
-  .profile{
+  .profile {
     margin-left: 19px;
-  margin-right: 19px;
+    margin-right: 19px;
   }
-  
 }
