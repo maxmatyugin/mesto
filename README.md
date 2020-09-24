@@ -1,6 +1,6 @@
 # Проект 4: Место
 ## Доступен по [ссылке](https://maxmatyugin.github.io/mesto/ "Mesto Russia")
-https://maxmatyugin.github.io/mesto/
+
 ### Обзор
 
 Учебный проект Яндекс.Практикума в котором начинается самое интересное: JavaScript.
