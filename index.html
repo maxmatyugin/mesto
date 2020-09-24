@@ -9,17 +9,6 @@
 </head>
 
 <body class="page">
-  <div class="popup">
-    <div class="popup__overlay"></div>
-    <div class="popup__container">
-      <h2 class="popup__header">Редактировать профиль</h2>
-      <input type="text" class="popup__name" value="Жак-Ив Кусто"></input>
-      <input type="text" class="popup__caption" value="Исследователь океана"></input>
-      <button class="popup__button">Сохранить</button>
-      <div class="popup__close-icon"></div>
-    </div>
-  </div>
-  
   <header class="header">
     <img class="header__logo" src="./images/logo.svg" alt="логотип Место Россия">
   </header>
@@ -28,9 +17,10 @@
       <article class="profile__article">
         <img class="profile__avatar" src="./images/avatar.png" alt="аватар">
         <div class="profile__info">
-          <h1 class="profile__name">Жак-Ив Кусто
+          <div class="profile__wrapper">
+            <h1 class="profile__name">Жак-Ив Кусто</h1>
             <button class="profile__edit-button"></button>
-          </h1>
+          </div>
           <p class="profile__caption">Исследователь океана</p>
         </div>
       </article>
@@ -38,7 +28,7 @@
     </section>
     <ul class="elements">
       <li class="element">
-        <img class="element__image" src="./images//karachaevsk.png" alt="Карачаевск">
+        <img class="element__image" src="./images/karachaevsk.png" alt="Карачаевск">
         <div class="element__caption">
           <h2 class="element__heading">Карачаевск</h2>
           <button class="element__like-button"></button>
@@ -84,6 +74,17 @@
   <footer class="footer">
     <p class="footer__text">&copy; 2020 Mesto Russia</p>
   </footer>
+  <div class="popup">
+    <div class="popup__overlay">
+      <form class="popup__container">
+        <h2 class="popup__header">Редактировать профиль</h2>
+        <input type="text" class="popup__name" autocomplete="off" value=''>
+        <input type="text" class="popup__caption" autocomplete="off" value=''>
+        <input type="submit" class="popup__button" value="Сохранить"></input>
+        <input type="button" class="popup__close-icon"></input>
+      </form>
+    </div>
+  </div>
   <script src="./pages/index.js"></script>
 </body>
 

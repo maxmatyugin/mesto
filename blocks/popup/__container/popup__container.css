@@ -2,39 +2,19 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  position: absolute;
-  
-  margin: 0 auto;
-  top: 195px;
-  right: 0;
-  
-  left: 0;
-  
   max-width: 430px;
   max-height: 330px;
   background-color: #ffffff;
-  
- 
-  
-  z-index: 1;
   color: #000000;
-  padding: 36px;
+  padding: 34px 36px 36px;
   border-radius: 10px;
+  position: relative;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 768px){
   .popup__container {
-    top: 123px;
-  }
-}
-
-
-@media screen and (max-width: 540px) {
-  .popup__container {
+    padding: 25px 22px;
     margin-left: 19px;
-  margin-right: 19px;
+    margin-right: 19px;
   }
 }
-
-
-
