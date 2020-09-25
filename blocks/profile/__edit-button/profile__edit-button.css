@@ -8,8 +8,9 @@
   background-size: 10px 10px;
   background-position: center;
   background-repeat: no-repeat;
-  background-color: #000000;
+  background-color: transparent;
   background-size: auto;
+  cursor: pointer;
 }
 
 .profile__edit-button:hover {
@@ -17,7 +18,7 @@
   transition: opacity 0.3s;
 }
 
-@media screen and (max-width: 1055px) {
+@media screen and (max-width: 768px) {
   .profile__edit-button {
     margin-left: 1px;
     width: 16px;

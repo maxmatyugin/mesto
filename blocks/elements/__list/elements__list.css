@@ -1,24 +1,23 @@
-@import url(./text/footer__text.css);
-.footer {
-  margin-top: 66px;
-  margin-bottom: 60px;
+.elements__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(282px, 1fr));
+  gap: 21px 18px;
+  margin: 0;
+  padding: 0;
   margin-left: 199px;
   margin-right: 199px;
-  flex-shrink: 0;
 }
 
 @media screen and (max-width: 1055px) {
-  .footer {
+  .elements__list {
     margin-left: 50px;
     margin-right: 50px;
   }
 }
 
 @media screen and (max-width: 768px) {
-  .footer {
+  .elements__list {
     margin-left: 19px;
     margin-right: 19px;
-    margin-top: 48px;
-    margin-bottom: 36px;
   }
 }

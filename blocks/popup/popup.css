@@ -1,10 +1,16 @@
 @import url(./__container/popup__container.css);
 @import url(./__header/popup__header.css);
 @import url(./__close-icon/popup__close-icon.css);
-@import url(./__name/popup__name.css);
-@import url(./__caption/popup__caption.css);
+@import url(./__input-text/popup__input-text.css);
 @import url(./__button/popup__button.css);
-@import url(./__overlay/popup__overlay.css);
 .popup {
   display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, .5);
+  justify-content: center;
+  align-items: center;
 }

@@ -5,19 +5,19 @@
   font-size: 18px;
   line-height: 21.78px;
   margin: 0;
-  margin-top: 16px;
-  max-width: 320px;
+  padding: 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 @media screen and (max-width: 1055px) {
-  .profile__caption {
-    font-size: 14px;
-    line-height: 16.94px;
-  }
+  .profile__caption {}
 }
 
 @media screen and (max-width: 768px) {
   .profile__caption {
-    margin-top: 14px;
+    font-size: 14px;
+    line-height: 16.94px;
   }
 }

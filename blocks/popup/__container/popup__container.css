@@ -3,7 +3,6 @@
   flex-direction: column;
   justify-content: space-between;
   max-width: 430px;
-  max-height: 330px;
   background-color: #ffffff;
   color: #000000;
   padding: 34px 36px 36px;
@@ -13,7 +12,7 @@
 
 @media screen and (max-width: 768px) {
   .popup__container {
-    padding: 25px 22px;
+    padding: 25px 25px;
     margin-left: 19px;
     margin-right: 19px;
   }

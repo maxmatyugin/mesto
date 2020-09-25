@@ -1,9 +1,9 @@
-.profile__article {
+.profile__block {
   display: flex;
 }
 
 @media screen and (max-width: 1055px) {
-  .profile__article {
+  .profile__block {
     flex-direction: column;
     align-items: center;
   }

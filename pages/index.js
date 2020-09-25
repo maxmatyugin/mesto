@@ -1,40 +1,30 @@
 let popup = document.querySelector('.popup');
-let popupCloseIcon = popup.querySelector('.popup__close-icon')
-let popupName = popup.querySelector('.popup__name');
-let popupCaption = popup.querySelector('.popup__caption');
-let profileName = document.querySelector('.profile__name');
-let profileCaption = document.querySelector('.profile__caption');
-let profileEditButton = document.querySelector('.profile__edit-button');
+let profile = document.querySelector('.profile');
+let editProfile = profile.querySelector('.profile__edit-button');
+let closePopup = popup.querySelector('.popup__close-icon');
+let profileName = profile.querySelector('.profile__name');
+let profileCaption = profile.querySelector('.profile__caption');
+let popupName = popup.querySelector('.popup__input-text_type_name');
+let popupCaption = popup.querySelector('.popup__input-text_type_job');
 
+function togglePopup() {
+  popup.classList.toggle('popup_opened');
 
-function togglePopup() { 
-  popup.classList.toggle('popup_opened'); 
-  
-  popupCaption.value = profileCaption.textContent;
-  popupName.value = profileName.textContent;
-  
+  if (popup.classList.contains('popup_opened')) {
+    popupCaption.value = profileCaption.textContent;
+    popupName.value = profileName.textContent;
+  } else {
+    return
+  }
 }
 
-profileEditButton.addEventListener('click', togglePopup);
-popupCloseIcon.addEventListener('click', togglePopup);
-
-
-function formSubmitHandler (evt) {
-    evt.preventDefault(); 
-
-    let popupName = document.querySelector('.popup__name');
-    let popupCaption = document.querySelector('.popup__caption');
-
-    popupName = popupName.value;
-    popupCaption = popupCaption.value;
-
-    let profileName = document.querySelector('.profile__name');
-    let profileCaption = document.querySelector('.profile__caption');
-    
-    profileName.textContent = popupName;
-    profileCaption.textContent = popupCaption;
-
-    togglePopup();
+function formSubmitHandler(evt) {
+  evt.preventDefault();
+  profileName.textContent = popupName.value;
+  profileCaption.textContent = popupCaption.value;
+  togglePopup();
 }
 
+editProfile.addEventListener('click', togglePopup);
+closePopup.addEventListener('click', togglePopup);
 popup.addEventListener('submit', formSubmitHandler);

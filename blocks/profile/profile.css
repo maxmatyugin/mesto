@@ -1,4 +1,4 @@
-@import url(./__article/profile__article.css);
+@import url(./__block/profile__block.css);
 @import url(./__avatar/profile__avatar.css);
 @import url(./__info/profile__info.css);
 @import url(./__name/profile__name.css);
@@ -10,7 +10,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 47px;
+  margin-bottom: 50px;
   margin-left: 199px;
   margin-right: 199px;
 }
@@ -21,9 +21,10 @@
   }
 }
 
-@media screen and (max-width: 1055px) {
+@media screen and (max-width: 768px) {
   .profile {
     margin-left: 19px;
     margin-right: 19px;
+    margin-bottom: 36px;
   }
 }
