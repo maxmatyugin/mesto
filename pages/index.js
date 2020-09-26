@@ -8,14 +8,11 @@ let popupName = popup.querySelector('.popup__input-text_type_name');
 let popupCaption = popup.querySelector('.popup__input-text_type_job');
 
 function togglePopup() {
-  popup.classList.toggle('popup_opened');
-
-  if (popup.classList.contains('popup_opened')) {
+  if (popup.classList.contains('popup_opened') === false) {
     popupCaption.value = profileCaption.textContent;
     popupName.value = profileName.textContent;
-  } else {
-    return
-  }
+  } 
+  popup.classList.toggle('popup_opened');
 }
 
 function formSubmitHandler(evt) {

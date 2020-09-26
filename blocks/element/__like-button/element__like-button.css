@@ -10,3 +10,8 @@
   margin-right: 21px;
   cursor: pointer;
 }
+
+.element__like-button:hover {
+  opacity: .6;
+  transition: opacity 0.3s;
+}
