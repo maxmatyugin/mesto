@@ -1,12 +1,15 @@
 .elements__list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(282px, 1fr));
+  grid-template-columns: repeat(auto-fill, 282px);
   gap: 21px 18px;
   margin: 0;
   padding: 0;
   margin-left: 199px;
   margin-right: 199px;
+  justify-content: center;
 }
+
+
 
 @media screen and (max-width: 1055px) {
   .elements__list {
