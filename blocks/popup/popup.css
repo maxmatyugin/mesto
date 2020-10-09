@@ -3,8 +3,13 @@
 @import url(./__close-icon/popup__close-icon.css);
 @import url(./__input-text/popup__input-text.css);
 @import url(./__button/popup__button.css);
+@import url(./__figure/popup__figure.css);
+@import url(./__image/popup__image.css);
+@import url(./__caption/popup__caption.css);
 .popup {
   display: none;
+  opacity: 0;
+  transition: opacity 3s linear;
   position: fixed;
   top: 0;
   right: 0;

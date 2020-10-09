@@ -28,53 +28,11 @@
     </section>
     <section class="elements">
       <ul class="elements__list">
-        <!-- <li class="element">
-          <img class="element__image" src="./images/karachaevsk.png" alt="Карачаевск">
-          <div class="element__caption">
-            <h2 class="element__heading">Карачаевск</h2>
-            <button class="element__like-button"></button>
-          </div>
-        </li>
-        <li class="element">
-          <img class="element__image" src="./images/elbrus.png" alt="Эльбрус">
-          <div class="element__caption">
-            <h2 class="element__heading">Гора Эльбрус</h2>
-            <button class="element__like-button"></button>
-          </div>
-        </li>
-        <li class="element">
-          <img class="element__image" src="./images/dombai.png" alt="Домбай">
-          <div class="element__caption">
-            <h2 class="element__heading">Домбай</h2>
-            <button class="element__like-button"></button>
-          </div>
-        </li>
-        <li class="element">
-          <img class="element__image" src="./images/elbrus.png" alt="Эльбрус">
-          <div class="element__caption">
-            <h2 class="element__heading">Гора Эльбрус</h2>
-            <button class="element__like-button"></button>
-          </div>
-        </li>
-        <li class="element">
-          <img class="element__image" src="./images/dombai.png" alt="Домбай">
-          <div class="element__caption">
-            <h2 class="element__heading">Домбай</h2>
-            <button class="element__like-button"></button>
-          </div>
-        </li>
-        <li class="element">
-          <img class="element__image" src="./images/karachaevsk.png" alt="Карачаево-Черкессия">
-          <div class="element__caption">
-            <h2 class="element__heading">Карачаево-Черкессия</h2>
-            <button class="element__like-button"></button>
-          </div>
-        </li> -->
         <template class="element-template">
           <li class="element">
             <div class="element__image-container">
               <img class="element__image">
-              <button class="element__delete-button"></button> 
+              <button class="element__delete-button"></button>
             </div>
             <div class="element__caption">
               <h2 class="element__heading"></h2>
@@ -109,6 +67,13 @@
       <button type="submit" class="popup__button" name="popup__submit-button">Создать</button>
       <button type="reset" aria-label="Закрыть" class="popup__close-icon" name="popup__reset-button"></button>
     </form>
+  </div>
+  <div class="popup popup_type_image">
+    <figure class="popup__figure">
+      <img class="popup__image">
+      <figcaption class="popup__caption"></figcaption>
+      <button type="button" aria-label="Закрыть" class="popup__close-icon" name="popup__close-button"></button>
+    </figure>
   </div>
   <script src="./pages/index.js"></script>
 </body>

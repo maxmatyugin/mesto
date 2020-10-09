@@ -21,6 +21,10 @@
   transition: opacity 0.3s;
 }
 
+.popup__button:focus {
+  outline: none;
+}
+
 @media screen and (max-width: 768px) {
   .popup__button {
     font-size: 14px;

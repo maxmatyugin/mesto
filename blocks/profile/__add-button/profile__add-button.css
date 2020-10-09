@@ -17,6 +17,10 @@
   transition: opacity 0.3s;
 }
 
+.profile__add-button:focus {
+  outline: none;
+}
+
 @media screen and (max-width: 1055px) {
   .profile__add-button {
     margin-top: 29px;
