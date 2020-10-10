@@ -1,0 +1,11 @@
+.popup__container_type_profile {
+  padding: 34px 36px 36.51px;
+  min-width: 359px;
+}
+
+@media screen and (max-width: 768px) {
+  .popup__container_type_profile {
+    padding: 25px 22px;
+    min-width: 238px;
+  }
+}

@@ -1,0 +1,9 @@
+.popup__header_narrow {
+  
+}
+
+@media screen and (max-width: 768px) {
+  .popup__header_narrow {
+    margin-bottom: 30px;
+  }
+}

@@ -96,7 +96,7 @@ addCardButton.addEventListener('click', toggleCard);
 closeCardPopup.addEventListener('click', toggleCard);
 popupAddCard.addEventListener('submit', function (evt) {
   evt.preventDefault();
-  const name = popupAddCard.querySelector('.popup__input-text_type_name');
+  const name = popupAddCard.querySelector('.popup__input-text_type_place');
   const link = popupAddCard.querySelector('.popup__input-text_type_link');
   addCard(name.value, link.value);
 

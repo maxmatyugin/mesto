@@ -5,15 +5,8 @@
 @import url(./__like-button/element__like-button.css);
 @import url(./__like-button/_active/element__like-button_active.css);
 @import url(./__delete-button/element__delete-button.css);
-/* * {
-  border: 1px solid red;
-  
-} */
 .element {
-  
   list-style: none;
   display: flex;
   flex-direction: column;
-  height: 361px;
-  
 }

@@ -1,0 +1,14 @@
+.popup__input-text_small {
+
+}
+
+@media screen and (max-width: 768px) {
+  .popup__input-text_small {
+    font-size: 12px;
+   line-height: 15px;
+  }
+  .popup__input-text_small:first-of-type {
+    margin-bottom: 18px;
+  }
+}
+
