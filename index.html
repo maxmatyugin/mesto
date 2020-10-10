@@ -27,20 +27,8 @@
       <button type="button" aria-label="Добавить" class="profile__add-button"></button>
     </section>
     <section class="elements">
-      <ul class="elements__list">
-        <template class="element-template">
-          <li class="element">
-            <div class="element__image-container">
-              <img class="element__image">
-              <button class="element__delete-button"></button>
-            </div>
-            <div class="element__caption">
-              <h2 class="element__heading"></h2>
-              <button class="element__like-button"></button>
-            </div>
-          </li>
-        </template>
-      </ul>
+      <ul class="elements__list"></ul>
+      
     </section>
   </main>
   <footer class="footer">
@@ -60,21 +48,35 @@
   <div class="popup popup_type_addCard">
     <form class="popup__container popup__container_type_addCard" name="popup__form">
       <h2 class="popup__header popup__header_narrow">Новое место</h2>
-      <input type="text" class="popup__input-text popup__input-text_small popup__input-text_type_place" name="popup__place" required
-        placeholder="Название">
-      <input type="text" class="popup__input-text popup__input-text_small popup__input-text_type_link" name="popup__link" required
-        placeholder="Ссылка на картинку">
+      <input type="text" class="popup__input-text popup__input-text_small popup__input-text_type_place"
+        name="popup__place" required placeholder="Название">
+      <input type="text" class="popup__input-text popup__input-text_small popup__input-text_type_link"
+        name="popup__link" required placeholder="Ссылка на картинку">
       <button type="submit" class="popup__button popup__button_narrow" name="popup__submit-button">Создать</button>
-      <button type="reset" aria-label="Закрыть" class="popup__close-icon popup__close-icon_position_corner" name="popup__reset-button"></button>
+      <button type="reset" aria-label="Закрыть" class="popup__close-icon popup__close-icon_position_corner"
+        name="popup__reset-button"></button>
     </form>
   </div>
   <div class="popup popup_type_image">
-    <figure class="popup__figure">
-      <img class="popup__image">
-      <figcaption class="popup__caption"></figcaption>
-      <button type="button" aria-label="Закрыть" class="popup__close-icon popup__close-icon_position_corner" name="popup__close-button"></button>
-    </figure>
+    <form class="popup__figure">
+      <img class="popup__image" alt="" src="#">
+      <h2 class="popup__caption"></h2>
+      <button type="button" aria-label="Закрыть" class="popup__close-icon popup__close-icon_position_corner"
+        name="popup__close-button"></button>
+    </form>
   </div>
+  <template class="element-template">
+    <li class="element">
+      <div class="element__image-container">
+        <img class="element__image">
+        <button class="element__delete-button"></button>
+      </div>
+      <div class="element__caption">
+        <h2 class="element__heading"></h2>
+        <button class="element__like-button"></button>
+      </div>
+    </li>
+  </template>
   <script src="./pages/index.js"></script>
 </body>
 

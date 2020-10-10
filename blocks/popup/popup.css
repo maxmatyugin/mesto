@@ -10,9 +10,6 @@
 @import url(./__image/popup__image.css);
 @import url(./__caption/popup__caption.css);
 @import url(./__close-icon/_position/popup__close-icon_position_corner.css);
-
-
-
 .popup {
   display: flex;
   visibility: hidden;
@@ -25,7 +22,6 @@
   right: 0;
   bottom: 0;
   left: 0;
-  
   background-color: rgba(0, 0, 0, .5);
   justify-content: center;
   align-items: center;

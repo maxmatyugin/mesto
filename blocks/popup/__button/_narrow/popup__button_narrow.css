@@ -1,7 +1,3 @@
-.popup__button_narrow {
-  
-}
-
 @media screen and (max-width: 768px) {
   .popup__button_narrow {
     height: 40px;

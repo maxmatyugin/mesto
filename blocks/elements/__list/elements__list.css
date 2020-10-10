@@ -9,8 +9,6 @@
   justify-content: center;
 }
 
-
-
 @media screen and (max-width: 1055px) {
   .elements__list {
     margin-left: 50px;
