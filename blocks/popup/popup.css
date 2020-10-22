@@ -10,6 +10,9 @@
 @import url(./__image/popup__image.css);
 @import url(./__caption/popup__caption.css);
 @import url(./__close-icon/_position/popup__close-icon_position_corner.css);
+@import url(./__error/popup__error.css);
+@import url(./__input-text/_invalid/popup__input-text_invalid.css);
+@import url(./__button/_invalid/popup__button_invalid.css);
 .popup {
   display: flex;
   visibility: hidden;

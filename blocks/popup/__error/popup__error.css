@@ -1,0 +1,23 @@
+.popup__error {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 15px;
+  color: #FF0000;
+  margin-top: 5px;
+  max-width: 327px;
+  max-height: 38px;
+  
+}
+
+.popup__error:first-of-type {
+  
+}
+
+@media screen and (max-width: 768px){
+  .popup__error {
+    max-width: 227px;
+    max-height: 50px;
+  }
+}
