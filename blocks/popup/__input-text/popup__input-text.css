@@ -9,10 +9,6 @@
   padding-bottom: 9px;
 }
 
-.popup__input-text:first-of-type {
-  /* margin-bottom: 30px; */
-}
-
 .popup__input-text:focus {
   outline: none;
 }
