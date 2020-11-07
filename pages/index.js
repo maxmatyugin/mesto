@@ -1,4 +1,5 @@
-import {Card} from "./Card.js"
+import { Card } from "./Card.js";
+import { FormValidator } from "./FormValidator.js";
 const initialCards = [
   {
     name: "Сиэтл",
@@ -32,25 +33,34 @@ const initialCards = [
   },
 ];
 
+const validationParams = {
+  formSelector: ".popup__container",
+  inputSelector: ".popup__input-text",
+  submitButtonSelector: ".popup__button",
+  inactiveButtonClass: "popup__button_invalid",
+  inputErrorClass: "popup__input-text_invalid",
+};
+
 const popup = document.querySelector(".popup");
+const profileForm = popup.querySelector(".popup__container_type_profile");
 const profile = document.querySelector(".profile");
 const profileEditButton = profile.querySelector(".profile__edit-button");
 const profileAddButton = profile.querySelector(".profile__add-button");
-const popupButton = popup.querySelector('.popup__button');
+const popupButton = popup.querySelector(".popup__button");
 const closePopupButton = popup.querySelector(".popup__close-icon");
 const profileName = profile.querySelector(".profile__name");
 const profileCaption = profile.querySelector(".profile__caption");
 const popupName = popup.querySelector(".popup__input-text_type_name");
 const popupCaption = popup.querySelector(".popup__input-text_type_job");
 const popupAddCard = document.querySelector(".popup_type_addCard");
+const addCardForm = popupAddCard.querySelector(
+  ".popup__container_type_addCard"
+);
 const addCardName = popupAddCard.querySelector(".popup__input-text_type_place");
 const addCardLink = popupAddCard.querySelector(".popup__input-text_type_link");
 const closeCardPopup = popupAddCard.querySelector(".popup__close-icon");
 const popupAddCardButton = popupAddCard.querySelector(".popup__button");
 const cardsContainer = document.querySelector(".elements__list");
-
-
-
 
 export const closePopupByPressingOnOverlayAndEscape = () => {
   const formElements = Array.from(document.querySelectorAll(".popup"));
@@ -62,23 +72,20 @@ export const closePopupByPressingOnOverlayAndEscape = () => {
     });
     function closeByEscape(evt) {
       if (evt.key === "Escape") {
-        
         form.classList.remove("popup_opened");
         document.removeEventListener("keydown", closeByEscape);
       }
     }
     document.addEventListener("keydown", closeByEscape);
   });
-}
+};
 
 function openPopup() {
-
   popupCaption.value = profileCaption.textContent;
   popupName.value = profileName.textContent;
   popup.classList.add("popup_opened");
   closePopupByPressingOnOverlayAndEscape();
-  popupButton.classList.remove("popup__button_invalid")
-  
+  popupButton.classList.remove("popup__button_invalid");
 }
 
 function closePopup() {
@@ -92,6 +99,8 @@ function openCard() {
   popupAddCard.classList.add("popup_opened");
   closePopupByPressingOnOverlayAndEscape();
   popupAddCardButton.classList.add("popup__button_invalid");
+  addCardName.value = "";
+  addCardLink.value = "";
 }
 function closeCard() {
   popupAddCard.classList.remove("popup_opened");
@@ -117,8 +126,21 @@ function formSubmitPlace(evt) {
   closeCard();
 }
 
+function validateForms() {
+  const profileValidator = new FormValidator(profileForm, validationParams);
+  profileValidator.enableValidation(profileForm);
 
+  const cardValidator = new FormValidator(addCardForm, validationParams);
+  cardValidator.enableValidation(addCardForm);
+}
 
+function renderCards() {
+  initialCards.forEach((item) => {
+    const card = new Card(item, ".element-template");
+    const cardElement = card.generateCard();
+    cardsContainer.append(cardElement);
+  });
+}
 
 profileEditButton.addEventListener("click", openPopup);
 closePopupButton.addEventListener("click", closePopup);
@@ -127,11 +149,10 @@ profileAddButton.addEventListener("click", openCard);
 closeCardPopup.addEventListener("click", closeCard);
 popupAddCard.addEventListener("submit", formSubmitPlace);
 
-
-
 initialCards.forEach((item) => {
-const card = new Card(item, ".element-template");
-const cardElement = card.generateCard();
-cardsContainer.append(cardElement);
-
+  const card = new Card(item, ".element-template");
+  const cardElement = card.generateCard();
+  cardsContainer.append(cardElement);
 });
+renderCards();
+validateForms();

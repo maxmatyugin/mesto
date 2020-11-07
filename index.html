@@ -28,7 +28,7 @@
     </section>
     <section class="elements">
       <ul class="elements__list"></ul>
-      
+
     </section>
   </main>
   <footer class="footer">
@@ -37,12 +37,12 @@
   <div class="popup">
     <form class="popup__container popup__container_type_profile" name="popup__form" novalidate>
       <h2 class="popup__header">Редактировать профиль</h2>
-      <input type="text" id="name-input" class="popup__input-text popup__input-text_type_name" name="popup__name" required minlength="2" maxlength="40"
-        placeholder="Ваше имя">
-        <span class="popup__error" id="name-input-error"></span>
-      <input type="text" id="job-input" class="popup__input-text popup__input-text_type_job" name="popup__job" required minlength="2" maxlength="200"
-        placeholder="Род деятельности">
-        <span class="popup__error" id="job-input-error"></span>
+      <input type="text" id="name-input" class="popup__input-text popup__input-text_type_name" name="popup__name"
+        required minlength="2" maxlength="40" placeholder="Ваше имя">
+      <span class="popup__error" id="name-input-error"></span>
+      <input type="text" id="job-input" class="popup__input-text popup__input-text_type_job" name="popup__job" required
+        minlength="2" maxlength="200" placeholder="Род деятельности">
+      <span class="popup__error" id="job-input-error"></span>
       <button type="submit" class="popup__button" name="popup__submit-button">Сохранить</button>
       <button type="reset" aria-label="Закрыть" class="popup__close-icon" name="popup__reset-button"></button>
     </form>
@@ -52,10 +52,10 @@
       <h2 class="popup__header popup__header_narrow">Новое место</h2>
       <input type="text" id="place-input" class="popup__input-text popup__input-text_small popup__input-text_type_place"
         name="popup__place" required minlength="2" maxlength="30" placeholder="Название">
-        <span class="popup__error" id="place-input-error"></span>
+      <span class="popup__error" id="place-input-error"></span>
       <input type="url" id="link-input" class="popup__input-text popup__input-text_small popup__input-text_type_link"
         name="popup__link" required placeholder="Ссылка на картинку">
-        <span class="popup__error" id="link-input-error"></span>
+      <span class="popup__error" id="link-input-error"></span>
       <button type="submit" class="popup__button popup__button_narrow" name="popup__submit-button">Создать</button>
       <button type="reset" aria-label="Закрыть" class="popup__close-icon popup__close-icon_position_corner"
         name="popup__reset-button"></button>
@@ -82,7 +82,6 @@
     </li>
   </template>
   <script src="./pages/index.js" type="module"></script>
-  <script src="./pages/validate.js"></script>
 </body>
 
 </html>

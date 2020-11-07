@@ -1,5 +1,7 @@
 import {closePopupByPressingOnOverlayAndEscape} from './index.js'
 
+
+
 const imagePopup = document.querySelector(".popup_type_image");
 const imagePicture = imagePopup.querySelector(".popup__image");
 const imageCaption = imagePopup.querySelector(".popup__caption");
@@ -85,3 +87,4 @@ export class Card {
     });
   }
 }
+
