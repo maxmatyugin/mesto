@@ -1,9 +1,8 @@
-import { closePopupByPressingOnOverlayAndEscape } from "./index.js";
+import { showPopup } from "./index.js";
 
 const imagePopup = document.querySelector(".popup_type_image");
-const imagePicture = imagePopup.querySelector(".popup__image");
-const imageCaption = imagePopup.querySelector(".popup__caption");
-const imageCloseButton = imagePopup.querySelector(".popup__close-icon");
+export const imagePicture = imagePopup.querySelector(".popup__image");
+export const imageCaption = imagePopup.querySelector(".popup__caption");
 
 export class Card {
   constructor(data, cardSelector) {
@@ -40,16 +39,9 @@ export class Card {
   }
 
   _handleImageClick() {
+    showPopup(imagePopup);
     imagePicture.src = this._image;
     imageCaption.textContent = this._name;
-    imagePopup.classList.add("popup_opened");
-    closePopupByPressingOnOverlayAndEscape();
-  }
-
-  _closeImagePopup() {
-    imagePicture.src = "";
-    imageCaption.textContent = "";
-    imagePopup.classList.remove("popup_opened");
   }
 
   _setEventListeners() {
@@ -70,9 +62,5 @@ export class Card {
       .addEventListener("click", () => {
         this._handleImageClick();
       });
-
-    imageCloseButton.addEventListener("click", () => {
-      this._closeImagePopup();
-    });
   }
 }
