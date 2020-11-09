@@ -71,16 +71,14 @@ export function showPopup(popupElement) {
 
 function hidePopup(popupElement) {
   popupElement.classList.remove("popup_opened");
+  document.removeEventListener("keydown", closePopupByEscape);
 }
 
 function closePopupByEscape(evt) {
-  const forms = Array.from(document.querySelectorAll(".popup"));
-  forms.forEach((form) => {
-    if (evt.key === "Escape") {
-      hidePopup(form);
-      document.removeEventListener("keydown", closePopupByEscape);
-    }
-  });
+  const popupActive = document.querySelector(".popup_opened");
+  if (evt.key === "Escape") {
+    hidePopup(popupActive);
+  }
 }
 
 function closePopupByOverlay(form) {
@@ -91,32 +89,18 @@ function closePopupByOverlay(form) {
   });
 }
 
-function openPopup() {
-  popupCaption.value = profileCaption.textContent;
-  popupName.value = profileName.textContent;
-  showPopup(popup);
-}
-
-function closePopup() {
-  hidePopup(popup);
-}
-
 function openCard() {
-
   showPopup(popupAddCard);
-  addCardForm.reset();
+
   popupAddCardButton.classList.add("popup__button_invalid");
   popupAddCardButton.disabled = true;
-}
-function closeCard() {
-  hidePopup(popupAddCard);
 }
 
 function submitProfileForm(evt) {
   evt.preventDefault();
   profileName.textContent = popupName.value;
   profileCaption.textContent = popupCaption.value;
-  closePopup();
+  hidePopup(popup);
 }
 
 function submitPlaceForm(evt) {
@@ -127,9 +111,9 @@ function submitPlaceForm(evt) {
   const item = new Card(card, ".element-template");
   const cardElement = item.generateCard();
   cardsContainer.prepend(cardElement);
-  addCardName.value = "";
-  addCardLink.value = "";
-  closeCard();
+
+  addCardForm.reset();
+  hidePopup(popupAddCard);
 }
 
 function closeImage() {
@@ -154,11 +138,15 @@ function renderCards() {
   });
 }
 
-profileEditButton.addEventListener("click", openPopup);
-closePopupButton.addEventListener("click", closePopup);
+profileEditButton.addEventListener("click", () => {
+  popupCaption.value = profileCaption.textContent;
+  popupName.value = profileName.textContent;
+  showPopup(popup);
+});
+closePopupButton.addEventListener("click", () => hidePopup(popup));
 popup.addEventListener("submit", submitProfileForm);
 profileAddButton.addEventListener("click", openCard);
-closeCardPopup.addEventListener("click", closeCard);
+closeCardPopup.addEventListener("click", () => hidePopup(popupAddCard));
 popupAddCard.addEventListener("submit", submitPlaceForm);
 closeImageButton.addEventListener("click", closeImage);
 
