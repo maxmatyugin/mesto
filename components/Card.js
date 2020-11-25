@@ -1,8 +1,6 @@
-import { showPopup } from "./index.js";
+import { showPopup } from "../pages/index.js";
 
-const imagePopup = document.querySelector(".popup_type_image");
-export const imagePicture = imagePopup.querySelector(".popup__image");
-export const imageCaption = imagePopup.querySelector(".popup__caption");
+import { imagePopup, imagePicture, imageCaption } from "../utils/constants.js";
 
 export class Card {
   constructor(data, cardSelector) {

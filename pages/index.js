@@ -1,67 +1,30 @@
-import { Card, imageCaption, imagePicture } from "./Card.js";
-import { FormValidator } from "./FormValidator.js";
-const initialCards = [
-  {
-    name: "Сиэтл",
-    link:
-      "https://images.unsplash.com/photo-1516901632977-d141a38d469b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80",
-  },
-  {
-    name: "Джексон",
-    link:
-      "https://images.unsplash.com/photo-1584665064866-167dba6f8a48?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80",
-  },
-  {
-    name: "Питтсбург",
-    link:
-      "https://images.unsplash.com/photo-1568049896209-05cd962a9f76?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80",
-  },
-  {
-    name: "Солт-Лейк-Сити",
-    link:
-      "https://images.unsplash.com/photo-1463608666382-cbb244a7bea2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=660&q=80",
-  },
-  {
-    name: "Остин",
-    link:
-      "https://images.unsplash.com/photo-1588993608283-7f0eda4438be?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80",
-  },
-  {
-    name: "Бостон",
-    link:
-      "https://images.unsplash.com/photo-1556079337-a837a2d11f04?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1268&q=80",
-  },
-];
-
-const validationParams = {
-  formSelector: ".popup__container",
-  inputSelector: ".popup__input-text",
-  submitButtonSelector: ".popup__button",
-  inactiveButtonClass: "popup__button_invalid",
-  inputErrorClass: "popup__input-text_invalid",
-};
-
-const popup = document.querySelector(".popup");
-const profileForm = popup.querySelector(".popup__container_type_profile");
-const profile = document.querySelector(".profile");
-const profileEditButton = profile.querySelector(".profile__edit-button");
-const profileAddButton = profile.querySelector(".profile__add-button");
-const closePopupButton = popup.querySelector(".popup__close-icon");
-const profileName = profile.querySelector(".profile__name");
-const profileCaption = profile.querySelector(".profile__caption");
-const popupName = popup.querySelector(".popup__input-text_type_name");
-const popupCaption = popup.querySelector(".popup__input-text_type_job");
-const popupAddCard = document.querySelector(".popup_type_addCard");
-const addCardForm = popupAddCard.querySelector(
-  ".popup__container_type_addCard"
-);
-const addCardName = popupAddCard.querySelector(".popup__input-text_type_place");
-const addCardLink = popupAddCard.querySelector(".popup__input-text_type_link");
-const closeCardPopup = popupAddCard.querySelector(".popup__close-icon");
-const popupAddCardButton = popupAddCard.querySelector(".popup__button");
-const cardsContainer = document.querySelector(".elements__list");
-const popupImage = document.querySelector(".popup_type_image");
-const closeImageButton = popupImage.querySelector(".popup__close-icon");
+import { Card } from "../components/Card.js";
+import { FormValidator } from "../components/FormValidator.js";
+import {
+  initialCards,
+  validationParams,
+  popup,
+  profileForm,
+  profile,
+  profileEditButton,
+  profileAddButton,
+  closePopupButton,
+  profileName,
+  profileCaption,
+  popupName,
+  popupCaption,
+  popupAddCard,
+  addCardForm,
+  addCardName,
+  addCardLink,
+  closeCardPopup,
+  popupAddCardButton,
+  cardsContainer,
+  popupImage,
+  closeImageButton,
+  imagePicture,
+  imageCaption,
+} from "../utils/constants.js";
 
 export function showPopup(popupElement) {
   popupElement.classList.add("popup_opened");
