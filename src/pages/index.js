@@ -21,6 +21,7 @@ import {
   imagePopup,
 } from "../utils/constants.js";
 import { UserInfo } from "../components/UserInfo.js";
+import './index.css';
 
 const cardPopup = new PopupWithForm({
   popupSelector: popupAddCard,
