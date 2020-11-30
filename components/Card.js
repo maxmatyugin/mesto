@@ -1,12 +1,9 @@
-import { showPopup } from "../pages/index.js";
-
-import { imagePopup, imagePicture, imageCaption } from "../utils/constants.js";
-
 export class Card {
-  constructor(data, cardSelector) {
+  constructor(data, cardSelector, { handleCardClick }) {
     this._name = data.name;
     this._image = data.link;
     this._cardSelector = cardSelector;
+    this.handleCardClick = handleCardClick;
   }
 
   _getTemplate() {
@@ -36,12 +33,6 @@ export class Card {
     this._element.remove(this._element);
   }
 
-  _handleImageClick() {
-    showPopup(imagePopup);
-    imagePicture.src = this._image;
-    imageCaption.textContent = this._name;
-  }
-
   _setEventListeners() {
     this._element
       .querySelector(".element__like-button")
@@ -58,7 +49,7 @@ export class Card {
     this._element
       .querySelector(".element__image")
       .addEventListener("click", () => {
-        this._handleImageClick();
+        this.handleCardClick();
       });
   }
 }
