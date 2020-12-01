@@ -46,14 +46,11 @@ export const profileForm = popup.querySelector(
 export const profile = document.querySelector(".profile");
 export const profileEditButton = profile.querySelector(".profile__edit-button");
 export const profileAddButton = profile.querySelector(".profile__add-button");
-export const closePopupButton = popup.querySelector(".popup__close-icon");
-export const profileName = profile.querySelector(".profile__name");
-export const profileCaption = profile.querySelector(".profile__caption");
 export const popupName = popup.querySelector(".popup__input-text_type_name");
 export const popupCaption = popup.querySelector(".popup__input-text_type_job");
-export const popupAddCard = document.querySelector(".popup_type_addCard");
+export const popupAddCard = document.querySelector(".popup_type_add_card");
 export const addCardForm = popupAddCard.querySelector(
-  ".popup__container_type_addCard"
+  ".popup__container_type_add_card"
 );
 export const addCardName = popupAddCard.querySelector(
   ".popup__input-text_type_place"
@@ -61,11 +58,9 @@ export const addCardName = popupAddCard.querySelector(
 export const addCardLink = popupAddCard.querySelector(
   ".popup__input-text_type_link"
 );
-export const closeCardPopup = popupAddCard.querySelector(".popup__close-icon");
 export const popupAddCardButton = popupAddCard.querySelector(".popup__button");
 export const cardsContainer = document.querySelector(".elements__list");
 export const popupImage = document.querySelector(".popup_type_image");
-export const closeImageButton = popupImage.querySelector(".popup__close-icon");
 export const imagePopup = document.querySelector(".popup_type_image");
 export const imagePicture = imagePopup.querySelector(".popup__image");
 export const imageCaption = imagePopup.querySelector(".popup__caption");

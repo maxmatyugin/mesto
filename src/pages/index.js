@@ -53,10 +53,10 @@ export const popupWithImage = new PopupWithImage(imagePopup);
 
 function validateForms() {
   const profileValidator = new FormValidator(profileForm, validationParams);
-  profileValidator.enableValidation(profileForm);
+  profileValidator.enableValidation();
 
   const cardValidator = new FormValidator(addCardForm, validationParams);
-  cardValidator.enableValidation(addCardForm);
+  cardValidator.enableValidation();
 }
 
 const renderCards = new Section(

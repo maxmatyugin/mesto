@@ -21,6 +21,7 @@ export class Popup {
     const closeButton = this.popupSelector.querySelector(".popup__close-icon");
     closeButton.removeEventListener("click", this.close);
     this.popupSelector.classList.remove("popup_opened");
+    
   }
   _handleEscClose(evt) {
     if (evt.key === "Escape") {
