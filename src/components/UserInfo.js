@@ -13,3 +13,23 @@ export class UserInfo {
     this._caption.textContent = captionInput;
   }
 }
+
+export class UserInfoWithAvatar extends UserInfo {
+  constructor(name, caption, avatar) {
+    super(name, caption);
+    this._avatar = document.querySelector(avatar);
+  }
+
+  getUserInfo() {
+    return {
+      name: this._name.textContent,
+      caption: this._caption.textContent,
+      avatar: this._avatar,
+    };
+  }
+
+  setUserInfo(nameInput, captionInput, avatarInput) {
+    super.setUserInfo(nameInput, captionInput);
+    this._avatar.style.backgroundImage = `url('${avatarInput}')`;
+  }
+}

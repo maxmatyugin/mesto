@@ -14,13 +14,15 @@
   <main class="main">
     <section class="profile">
       <div class="profile__block">
-        <img class="profile__avatar" src="<%=require('./images/avatar.png')%>" alt="аватар">
+        
+          <div class="profile__avatar"></div>
+        
         <div class="profile__info">
           <div class="profile__wrapper">
-            <h1 class="profile__name">Жак-Ив Кусто</h1>
+            <h1 class="profile__name"></h1>
             <button type="button" aria-label="Редактировать" class="profile__edit-button"></button>
           </div>
-          <p class="profile__caption">Исследователь океана</p>
+          <p class="profile__caption"></p>
         </div>
       </div>
       <button type="button" aria-label="Добавить" class="profile__add-button"></button>
@@ -68,6 +70,24 @@
         name="popup__close-button"></button>
     </div>
   </div>
+  <div class="popup popup_type_rusure">
+    <form class="popup__container popup__container_type_rusure">
+      <h2 class="popup__header">Вы уверены?</h2>
+      <button type="submit" class="popup__button popup__button_narrow" name="popup__submit-button">Да</button>
+      <button type="reset" aria-label="Закрыть" class="popup__close-icon" name="popup__reset-button"></button>
+    </form>
+  </div>
+  <div class="popup popup_type_avatar">
+    <form class="popup__container popup__container_type_avatar" name="popup__form" novalidate>
+      <h2 class="popup__header">Обновить аватар</h2>
+      <input type="url" id="link-input" class="popup__input-text popup__input-text_small popup__input-text_type_link"
+        name="popup__link" required placeholder="Ссылка на картинку">
+      <span class="popup__error" id="link-input-error"></span>
+      <button type="submit" class="popup__button popup__button_narrow" name="popup__submit-button">Сохранить</button>
+      <button type="reset" aria-label="Закрыть" class="popup__close-icon" name="popup__reset-button"></button>
+    </form>
+  </div>
+  
   <template class="element-template">
     <li class="element">
       <div class="element__image-container">
@@ -76,7 +96,11 @@
       </div>
       <div class="element__caption">
         <h2 class="element__heading"></h2>
-        <button class="element__like-button"></button>
+        <div class="element__like-wrapper">
+          <button class="element__like-button"></button>
+          <h3 class="element__like-counter"></h3>
+        </div>
+        
       </div>
     </li>
   </template>
