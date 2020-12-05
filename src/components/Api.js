@@ -5,14 +5,16 @@ export class Api {
   }
 
   _handleRes(res) {
-    if (res.ok) return res.json();
-    return Promise.reject(res.status);
+    if (res.ok) {
+      return res.json();
+    } else {
+      return Promise.reject(new Error(`Ошибка: ${res.status}`));
+    }
   }
 
   getInitialCards() {
     return fetch(`${this._baseUrl}cards`, {
       headers: this._headers,
-      "Content-Type": "application/json",
     }).then((res) => this._handleRes(res));
   }
 
@@ -20,7 +22,6 @@ export class Api {
     return fetch(`${this._baseUrl}cards`, {
       method: "POST",
       headers: this._headers,
-      "Content-Type": "application/json",
       body: JSON.stringify({
         name: name,
         link: link,
@@ -32,14 +33,12 @@ export class Api {
     return fetch(`${this._baseUrl}cards/${id}`, {
       method: "DELETE",
       headers: this._headers,
-      "Content-Type": "application/json",
     }).then((res) => this._handleRes(res));
   }
 
   getUserInfo() {
     return fetch(`${this._baseUrl}users/me`, {
       headers: this._headers,
-      "Content-Type": "application/json",
     }).then((res) => this._handleRes(res));
   }
 
@@ -47,7 +46,6 @@ export class Api {
     return fetch(`${this._baseUrl}users/me`, {
       method: "PATCH",
       headers: this._headers,
-      "Content-Type": "application/json",
       body: JSON.stringify({
         name: popupName,
         about: popupCaption,
@@ -59,7 +57,6 @@ export class Api {
     return fetch(`${this._baseUrl}users/me/avatar`, {
       method: "PATCH",
       headers: this._headers,
-      "Content-Type": "application/json",
       body: JSON.stringify({
         avatar: avatarInputUrl,
       }),
@@ -70,7 +67,6 @@ export class Api {
     return fetch(`${this._baseUrl}cards/likes/${id}`, {
       method: "PUT",
       headers: this._headers,
-      "Content-Type": "application/json",
     }).then((res) => this._handleRes(res));
   }
 
@@ -78,7 +74,6 @@ export class Api {
     return fetch(`${this._baseUrl}cards/likes/${id}`, {
       method: "DELETE",
       headers: this._headers,
-      "Content-Type": "application/json",
     }).then((res) => this._handleRes(res));
   }
 }

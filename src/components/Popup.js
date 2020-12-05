@@ -8,12 +8,11 @@ export class Popup {
   setEventListeners() {
     const closeButton = this.popupSelector.querySelector(".popup__close-icon");
     closeButton.addEventListener("click", this.close);
-    document.addEventListener("keydown", this._handleEscClose);
   }
 
   open() {
-    this.setEventListeners();
     this._closePopupByOverlay();
+    document.addEventListener("keydown", this._handleEscClose);
     this.popupSelector.classList.add("popup_opened");
   }
   close() {
@@ -21,7 +20,6 @@ export class Popup {
     const closeButton = this.popupSelector.querySelector(".popup__close-icon");
     closeButton.removeEventListener("click", this.close);
     this.popupSelector.classList.remove("popup_opened");
-    
   }
   _handleEscClose(evt) {
     if (evt.key === "Escape") {

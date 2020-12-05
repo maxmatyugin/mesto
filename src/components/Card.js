@@ -1,16 +1,24 @@
-import { PopupWithForm } from "./PopupWithForm";
-import { deletePopup, deleteSubmitButton } from "../utils/constants.js";
-import { api } from "../pages/index.js";
-
 export class Card {
-  constructor(data, cardSelector, { handleCardClick }) {
+  constructor(
+    data,
+    cardSelector,
+    { handleCardClick },
+    userId,
+    deleteSubmitButton,
+    api,
+    { deleteHandler }
+  ) {
     this._name = data.name;
     this._image = data.link;
     this._id = data._id;
     this._likes = data.likes;
-    this._owner = data.owner.name;
+    this._owner = data.owner._id;
+    this._userId = userId;
     this._cardSelector = cardSelector;
-    this.handleCardClick = handleCardClick;
+    this._handleCardClick = handleCardClick;
+    this._api = api;
+    this._deleteHandler = deleteHandler;
+    this._deleteSubmitButton = deleteSubmitButton;
   }
 
   _getTemplate() {
@@ -27,13 +35,24 @@ export class Card {
     this._setEventListeners();
     this._element.querySelector(".element__heading").textContent = this._name;
     this._element.querySelector(".element__image").src = this._image;
+    this._element.querySelector(
+      ".element__image"
+    ).alt = `Изображение, на котором ${this._name}`;
+
     const userName = document.querySelector(".profile__name");
 
-    if (!(userName.textContent === this._owner)) {
-      this._element
-        .querySelector(".element__delete-button")
-        .classList.add("element__delete-button_hidden");
-    }
+    this._userId
+      .then((data) => {
+        this._element
+          .querySelector(".element__delete-button")
+          .classList.add(
+            data._id === this._owner
+              ? "element__delete-button_visible"
+              : "element__delete-button_hidden"
+          );
+      })
+      .catch((err) => console.log(err));
+
     const isOwner = this._likes.filter((item) => {
       if (item.name === userName.textContent) {
         this._element
@@ -48,39 +67,50 @@ export class Card {
     return this._element;
   }
 
-  _handleLikeButtonClick() {
-    const likeCouner = this._element.querySelector(".element__like-counter");
+  _countLikes(data) {
+    const likeCounter = this._element.querySelector(".element__like-counter");
+    likeCounter.textContent = data.likes.length;
+  }
 
+  _handleLikeButtonClick() {
     if (
       this._element
         .querySelector(".element__like-button")
         .classList.contains("element__like-button_active")
     ) {
-      this._element
-        .querySelector(".element__like-button")
-        .classList.remove("element__like-button_active");
-      const deleteLike = api.deleteLike(this._id);
-      deleteLike.then((data) => (likeCouner.textContent = data.likes.length));
+      const deleteLike = this._api.deleteLike(this._id);
+      deleteLike
+        .then((data) => {
+          this._countLikes(data);
+          this._element
+            .querySelector(".element__like-button")
+            .classList.remove("element__like-button_active");
+        })
+        .catch((err) => console.log(err));
     } else {
-      this._element
-        .querySelector(".element__like-button")
-        .classList.add("element__like-button_active");
-      const addLike = api.addLike(this._id);
-      addLike.then((data) => (likeCouner.textContent = data.likes.length));
+      const addLike = this._api.addLike(this._id);
+      addLike
+        .then((data) => {
+          this._countLikes(data);
+          this._element
+            .querySelector(".element__like-button")
+            .classList.add("element__like-button_active");
+        })
+        .catch((err) => console.log(err));
     }
   }
 
-  _handleDeleteButtonClick(rusurePopup) {
-    deleteSubmitButton.textContent = "Сохранение...";
-    const deleteCard = api.deleteCard(this._id);
+  _handleDeleteButtonClick(popup) {
+    this._deleteSubmitButton.textContent = "Сохранение...";
+    const deleteCard = this._api.deleteCard(this._id);
     deleteCard
-      .then(() => {})
+      .then(() => {
+        this._element.remove();
+        popup.close();
+      })
       .catch((err) => console.log(err))
       .finally(() => {
-        deleteSubmitButton.textContent = "Да";
-        rusurePopup.close();
-        deleteSubmitButton.classList.add("popup__button_invalid");
-        deleteSubmitButton.disabled = true;
+        this._deleteSubmitButton.textContent = "Да";
       });
   }
 
@@ -94,19 +124,13 @@ export class Card {
     this._element
       .querySelector(".element__delete-button")
       .addEventListener("click", () => {
-        const rusurePopup = new PopupWithForm({
-          popupSelector: deletePopup,
-          formSubmitter: () => {
-            this._handleDeleteButtonClick(rusurePopup);
-          },
-        });
-        rusurePopup.open();
+        this._deleteHandler();
       });
 
     this._element
       .querySelector(".element__image")
       .addEventListener("click", () => {
-        this.handleCardClick();
+        this._handleCardClick(this._name, this._image);
       });
   }
 }

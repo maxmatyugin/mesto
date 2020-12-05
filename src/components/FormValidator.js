@@ -34,6 +34,11 @@ export class FormValidator {
     }
   }
 
+  resetSubmitButton(buttonElement) {
+    buttonElement.classList.add("popup__button_invalid");
+    buttonElement.disabled = true;
+  }
+
   _setEventListeners(formElement, buttonElement) {
     const inputElements = Array.from(
       formElement.querySelectorAll(this._params.inputSelector)
